@@ -24,7 +24,7 @@
                 {%- elsif block.settings.placeholder != blank -%}
                   <img src="{{ block.settings.placeholder | asset_url }}" alt="{{ block.settings.name | escape }}" width="600" height="200" loading="lazy">
                 {%- else -%}
-                  <span class="jhq-kicker" style="color: var(--jhq-ink);">{{ block.settings.name }}</span>
+                  <span class="jhq-hosp__wordmark">{{ block.settings.name }}</span>
                 {%- endif -%}
               </span>
             {%- endfor -%}

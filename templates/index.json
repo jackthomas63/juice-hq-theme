@@ -468,18 +468,43 @@
             "placeholder": "logo-one-aldwych.png",
             "name": "One Aldwych"
           }
+        },
+        "hotel_5": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-st-clement.png",
+            "name": "St. Clement London"
+          }
+        },
+        "hotel_6": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "",
+            "name": "Waldorf Astoria Admiralty Arch"
+          }
         }
       },
       "block_order": [
         "hotel_1",
         "hotel_2",
         "hotel_3",
-        "hotel_4"
+        "hotel_4",
+        "hotel_5",
+        "hotel_6"
       ]
+    },
+    "film": {
+      "type": "jhq-film",
+      "settings": {
+        "video_file": "jhq-brand-film.mp4",
+        "kicker": "The Juice HQ brand film",
+        "title": ""
+      }
     }
   },
   "order": [
     "hero",
+    "film",
     "hospitality",
     "offers",
     "work",

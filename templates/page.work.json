@@ -8,12 +8,6 @@
         "text": "Beverages for flagship stores, launches, cafés and events, each designed with our in-house team."
       }
     },
-    "film": {
-      "type": "jhq-film",
-      "settings": {
-        "video_file": "jhq-brand-film.mp4"
-      }
-    },
     "projects": {
       "type": "jhq-projects",
       "settings": {},
@@ -112,7 +106,6 @@
   },
   "order": [
     "intro",
-    "film",
     "projects",
     "cta"
   ]
