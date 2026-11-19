@@ -5,11 +5,12 @@
     "header": {
       "type": "jhq-header",
       "settings": {
-        "menu": "main-menu",
         "cta_label": "Enquire",
         "cta_link": "/pages/enquire"
       }
     }
   },
-  "order": ["header"]
+  "order": [
+    "header"
+  ]
 }

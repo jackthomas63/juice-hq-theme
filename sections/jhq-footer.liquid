@@ -11,9 +11,21 @@
       {%- for block in section.blocks -%}
         <div class="jhq-footer__col" {{ block.shopify_attributes }}>
           <span class="jhq-kicker" style="color: #A6A6A6; margin-bottom: 8px;">{{ block.settings.title }}</span>
-          {%- for link in block.settings.menu.links -%}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          {%- endfor -%}
+          {%- if block.settings.menu.links.size > 0 -%}
+            {%- for link in block.settings.menu.links -%}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {%- endfor -%}
+          {%- elsif block.settings.links == 'offer' -%}
+            <a href="/pages/hospitality">Hospitality</a>
+            <a href="/pages/bespoke-branded-beverages">Bespoke Branded Beverages</a>
+            <a href="/pages/bespoke-water">Bespoke Water</a>
+            <a href="/pages/katie-london">Katie London</a>
+          {%- elsif block.settings.links == 'company' -%}
+            <a href="/pages/work">Work</a>
+            <a href="/pages/our-story">Our Story</a>
+            <a href="/pages/services">Services</a>
+            <a href="/pages/enquire">Enquire</a>
+          {%- endif -%}
           {%- if block.settings.show_instagram and settings.instagram_url != blank -%}
             <a href="{{ settings.instagram_url }}" target="_blank" rel="noopener">Instagram</a>
           {%- endif -%}
@@ -54,7 +66,8 @@
       "limit": 4,
       "settings": [
         { "type": "text", "id": "title", "label": "Column title", "default": "Juice HQ" },
-        { "type": "link_list", "id": "menu", "label": "Menu" },
+        { "type": "link_list", "id": "menu", "label": "Menu", "info": "Optional. Leave empty to use the built-in links below." },
+        { "type": "select", "id": "links", "label": "Built-in links", "options": [{ "value": "offer", "label": "Offer pages" }, { "value": "company", "label": "Juice HQ pages" }, { "value": "none", "label": "None" }], "default": "company" },
         { "type": "checkbox", "id": "show_instagram", "label": "Add Instagram link", "default": false }
       ]
     }

@@ -12,11 +12,30 @@
         "copyright": "Juice HQ. A family business."
       },
       "blocks": {
-        "offer": { "type": "menu", "settings": { "title": "Offer", "menu": "footer-offer", "show_instagram": false } },
-        "company": { "type": "menu", "settings": { "title": "Juice HQ", "menu": "footer", "show_instagram": true } }
+        "offer": {
+          "type": "menu",
+          "settings": {
+            "title": "Offer",
+            "links": "offer",
+            "show_instagram": false
+          }
+        },
+        "company": {
+          "type": "menu",
+          "settings": {
+            "title": "Juice HQ",
+            "links": "company",
+            "show_instagram": true
+          }
+        }
       },
-      "block_order": ["offer", "company"]
+      "block_order": [
+        "offer",
+        "company"
+      ]
     }
   },
-  "order": ["footer"]
+  "order": [
+    "footer"
+  ]
 }
