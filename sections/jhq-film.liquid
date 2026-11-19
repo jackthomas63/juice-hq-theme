@@ -3,6 +3,8 @@
     <div class="jhq-film">
       {%- if section.settings.video != blank -%}
         {{ section.settings.video | video_tag: image_size: '2000x', playsinline: true, preload: 'none' }}
+      {%- elsif section.settings.video_file != blank -%}
+        <video class="jhq-film__bg" src="{{ section.settings.video_file | asset_url }}" autoplay muted loop playsinline preload="metadata" aria-label="{{ section.settings.kicker | escape }}"></video>
       {%- elsif section.settings.video_url != blank -%}
         <template>
           {%- if section.settings.video_url.type == 'youtube' -%}
@@ -12,7 +14,9 @@
           {%- endif -%}
         </template>
       {%- endif -%}
-      {%- render 'jhq-img', image: section.settings.poster, fallback: 'jhq-corner-shop-2.jpg', alt: '', class: 'jhq-film__poster', sizes: '100vw' -%}
+      {%- if section.settings.video_file == blank or section.settings.video != blank -%}
+        {%- render 'jhq-img', image: section.settings.poster, fallback: 'jhq-corner-shop-2.jpg', alt: '', class: 'jhq-film__poster', sizes: '100vw' -%}
+      {%- endif -%}
       <div class="jhq-film__overlay">
         <span class="jhq-kicker" style="color: #fff;">{{ section.settings.kicker }}</span>
         <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px;">
@@ -30,6 +34,7 @@
   "settings": [
     { "type": "video", "id": "video", "label": "Video (uploaded to Shopify)" },
     { "type": "video_url", "id": "video_url", "label": "Or a YouTube / Vimeo link", "accept": ["youtube", "vimeo"] },
+    { "type": "text", "id": "video_file", "label": "Video file in the theme", "info": "Plays silently in the background; the play button restarts it with sound." },
     { "type": "image_picker", "id": "poster", "label": "Cover image" },
     { "type": "text", "id": "kicker", "label": "Label", "default": "The Juice HQ brand film" },
     { "type": "text", "id": "title", "label": "Title", "default": "The premier standard." }

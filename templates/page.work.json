@@ -10,7 +10,9 @@
     },
     "film": {
       "type": "jhq-film",
-      "settings": {}
+      "settings": {
+        "video_file": "jhq-brand-film.mp4"
+      }
     },
     "projects": {
       "type": "jhq-projects",

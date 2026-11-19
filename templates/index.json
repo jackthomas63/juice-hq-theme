@@ -436,10 +436,51 @@
         "button_label": "Become a stockist",
         "button_link": "/pages/enquire?type=stockist"
       }
+    },
+    "hospitality": {
+      "type": "jhq-hospitality",
+      "settings": {},
+      "blocks": {
+        "hotel_1": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-peninsula.png",
+            "name": "The Peninsula London"
+          }
+        },
+        "hotel_2": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-the-chancery.png",
+            "name": "The Chancery Rosewood"
+          }
+        },
+        "hotel_3": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-park-hyatt.png",
+            "name": "Park Hyatt"
+          }
+        },
+        "hotel_4": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-one-aldwych.png",
+            "name": "One Aldwych"
+          }
+        }
+      },
+      "block_order": [
+        "hotel_1",
+        "hotel_2",
+        "hotel_3",
+        "hotel_4"
+      ]
     }
   },
   "order": [
     "hero",
+    "hospitality",
     "offers",
     "work",
     "logos",

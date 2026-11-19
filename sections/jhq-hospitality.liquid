@@ -1,0 +1,84 @@
+<section class="jhq-wrap jhq-pad" aria-labelledby="hosp-{{ section.id }}">
+  <div class="jhq-hosp">
+    <figure class="jhq-hosp__media">
+      {%- render 'jhq-img', image: section.settings.image, fallback: 'jhq-peninsula.jpg', alt: section.settings.caption, class: 'jhq-hosp__img', sizes: '(min-width: 990px) 58vw, 100vw' -%}
+      {%- if section.settings.caption != blank -%}
+        <figcaption style="font-size: 12px; color: var(--jhq-muted); padding-top: 14px;">{{ section.settings.caption }}</figcaption>
+      {%- endif -%}
+    </figure>
+    <div class="jhq-hosp__text">
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        {%- if section.settings.kicker != blank -%}<span class="jhq-kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+        <h2 id="hosp-{{ section.id }}">{{ section.settings.heading | newline_to_br }}</h2>
+        {%- if section.settings.text != blank -%}<p style="font-size: 19px; line-height: 1.5; font-weight: 300;">{{ section.settings.text }}</p>{%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          {%- if section.settings.logos_label != blank -%}<span class="jhq-kicker">{{ section.settings.logos_label }}</span>{%- endif -%}
+          <div class="jhq-hosp__logos">
+            {%- for block in section.blocks -%}
+              <span {{ block.shopify_attributes }}>
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 400 | image_tag: alt: block.settings.name, loading: 'lazy' }}
+                {%- elsif block.settings.placeholder != blank -%}
+                  <img src="{{ block.settings.placeholder | asset_url }}" alt="{{ block.settings.name | escape }}" width="600" height="200" loading="lazy">
+                {%- else -%}
+                  <span class="jhq-kicker" style="color: var(--jhq-ink);">{{ block.settings.name }}</span>
+                {%- endif -%}
+              </span>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- assign places = section.settings.places | newline_to_br | split: '<br />' -%}
+      {%- if section.settings.places != blank -%}
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          {%- if section.settings.places_label != blank -%}<span class="jhq-kicker">{{ section.settings.places_label }}</span>{%- endif -%}
+          <ul class="jhq-hosp__places">
+            {%- for p in places -%}
+              {%- assign p = p | strip -%}
+              {%- if p != blank -%}<li><span>{{ p }}</span><span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span></li>{%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a class="jhq-btn" style="align-self: flex-start;" href="{{ section.settings.button_link | default: '/pages/enquire?type=hospitality' }}">{{ section.settings.button_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hospitality feature",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "caption", "label": "Image caption", "default": "The Peninsula London" },
+    { "type": "text", "id": "kicker", "label": "Small label", "default": "Hospitality" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "The go-to juice partner for London's luxury hotels." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Juice HQ is the go-to juice and beverage partner for luxury hotels and hospitality within London, partnering with the biggest names." },
+    { "type": "text", "id": "logos_label", "label": "Logos label", "default": "In partnership with" },
+    { "type": "text", "id": "places_label", "label": "List label", "default": "Throughout the hotel" },
+    { "type": "textarea", "id": "places", "label": "List (one per line)", "default": "Breakfast\nIn-room dining\nMinibars and suites\nSpa and wellness\nMeetings and private events" },
+    { "type": "text", "id": "button_label", "label": "Button text", "default": "Enquire about hospitality" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Hotel logo",
+      "limit": 8,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo" },
+        { "type": "text", "id": "placeholder", "label": "Placeholder logo (theme file)" },
+        { "type": "text", "id": "name", "label": "Hotel name", "default": "Hotel" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Hospitality feature" }]
+}
+{% endschema %}

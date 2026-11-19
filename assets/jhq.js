@@ -52,7 +52,7 @@ class JhqFilm extends HTMLElement {
     const video = this.querySelector('video');
     const tpl = this.querySelector('template');
     btn?.addEventListener('click', () => {
-      if (video) { video.controls = true; video.play(); }
+      if (video) { video.muted = false; video.loop = false; video.currentTime = 0; video.controls = true; video.play(); }
       else if (tpl) { this.querySelector('.jhq-film').appendChild(tpl.content.cloneNode(true)); }
       this.querySelector('.jhq-film').classList.add('is-playing');
     });

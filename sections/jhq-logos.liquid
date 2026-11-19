@@ -7,9 +7,9 @@
     {%- for block in section.blocks -%}
       <li {{ block.shopify_attributes }}>
         {%- if block.settings.image != blank -%}
-          {{ block.settings.image | image_url: height: 120 | image_tag: alt: block.settings.name, loading: 'lazy' }}
+          {{ block.settings.image | image_url: height: 120 | image_tag: alt: block.settings.name, loading: 'lazy', class: 'jhq-logo--custom' }}
         {%- elsif block.settings.placeholder != blank -%}
-          <img src="{{ block.settings.placeholder | asset_url }}" alt="{{ block.settings.name | escape }}" width="280" height="92" loading="lazy">
+          <img src="{{ block.settings.placeholder | asset_url }}" alt="{{ block.settings.name | escape }}" width="600" height="200" loading="lazy">
         {%- else -%}
           <span class="jhq-kicker" style="color: var(--jhq-ink);">{{ block.settings.name }}</span>
         {%- endif -%}
