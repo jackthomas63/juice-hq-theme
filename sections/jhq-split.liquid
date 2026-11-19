@@ -1,0 +1,42 @@
+<section class="jhq-wrap" style="padding-bottom: clamp(72px, 9vw, 140px);{% if section.settings.top_space %} padding-top: clamp(72px, 9vw, 140px);{% endif %}" aria-labelledby="split-{{ section.id }}">
+  <div class="jhq-split{% if section.settings.rule %} jhq-split--rule{% endif %}{% if section.settings.image_right %} jhq-split--reverse{% endif %}">
+    <div class="jhq-split__media">
+      {%- render 'jhq-img', image: section.settings.image, fallback: section.settings.placeholder, alt: section.settings.heading, class: 'jhq-split__img' -%}
+    </div>
+    <div class="jhq-split__text">
+      {%- if section.settings.kicker != blank -%}<span class="jhq-kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      {%- if section.settings.number != blank -%}<span class="jhq-num">{{ section.settings.number }}</span>{%- endif -%}
+      <h2 id="split-{{ section.id }}" class="jhq-h2{% if section.settings.serif %} jhq-serif{% endif %}">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<div class="jhq-body">{{ section.settings.text }}</div>{%- endif -%}
+      {%- if section.settings.link_1_label != blank or section.settings.link_2_label != blank -%}
+        <div class="jhq-links">
+          {%- if section.settings.link_1_label != blank -%}<a class="jhq-link" href="{{ section.settings.link_1 | default: '#' }}">{{ section.settings.link_1_label }}</a>{%- endif -%}
+          {%- if section.settings.link_2_label != blank -%}<a class="jhq-link" href="{{ section.settings.link_2 | default: '#' }}">{{ section.settings.link_2_label }}</a>{%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "placeholder", "label": "Placeholder image (theme file)", "info": "Shown until you choose an image." },
+    { "type": "checkbox", "id": "image_right", "label": "Image on the right", "default": false },
+    { "type": "checkbox", "id": "rule", "label": "Line above", "default": true },
+    { "type": "checkbox", "id": "top_space", "label": "Extra space above", "default": false },
+    { "type": "text", "id": "kicker", "label": "Small label" },
+    { "type": "text", "id": "number", "label": "Number (e.g. 01)" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Heading" },
+    { "type": "checkbox", "id": "serif", "label": "Italic serif heading", "default": false },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "text", "id": "link_1_label", "label": "Link 1 text" },
+    { "type": "url", "id": "link_1", "label": "Link 1" },
+    { "type": "text", "id": "link_2_label", "label": "Link 2 text" },
+    { "type": "url", "id": "link_2", "label": "Link 2" }
+  ],
+  "presets": [{ "name": "Image with text" }]
+}
+{% endschema %}

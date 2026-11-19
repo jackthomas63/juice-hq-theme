@@ -1,0 +1,41 @@
+<section class="jhq-wrap" style="padding-top: 80px; padding-bottom: clamp(80px, 10vw, 140px);" aria-labelledby="logos-{{ section.id }}">
+  <div class="jhq-head" style="margin-bottom: 0;">
+    <h2 id="logos-{{ section.id }}" class="jhq-h2">{{ section.settings.heading }}</h2>
+    {%- if section.settings.kicker != blank -%}<span class="jhq-kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+  </div>
+  <ul class="jhq-logos">
+    {%- for block in section.blocks -%}
+      <li {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: height: 120 | image_tag: alt: block.settings.name, loading: 'lazy' }}
+        {%- elsif block.settings.placeholder != blank -%}
+          <img src="{{ block.settings.placeholder | asset_url }}" alt="{{ block.settings.name | escape }}" width="280" height="92" loading="lazy">
+        {%- else -%}
+          <span class="jhq-kicker" style="color: var(--jhq-ink);">{{ block.settings.name }}</span>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "Trusted by logos",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Trusted by" },
+    { "type": "text", "id": "kicker", "label": "Small label", "default": "Hotels, houses and brands" }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo (black on transparent PNG or SVG)" },
+        { "type": "text", "id": "placeholder", "label": "Placeholder logo (theme file)" },
+        { "type": "text", "id": "name", "label": "Brand name", "default": "Brand", "info": "Used for accessibility, and shown as text if there's no logo." }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Trusted by logos" }]
+}
+{% endschema %}

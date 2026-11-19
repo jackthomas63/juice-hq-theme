@@ -1,0 +1,35 @@
+{% doc %}
+  Renders an image chosen in the theme editor. Until one is chosen it shows
+  the placeholder photo bundled with the theme, so the design never looks empty.
+
+  @param {object} [image] - image from an image_picker setting
+  @param {string} [fallback] - file name of a bundled asset, e.g. 'jhq-diptyque.jpg'
+  @param {string} [alt] - alt text (defaults to the image's own alt)
+  @param {string} [class] - CSS class
+  @param {string} [sizes] - sizes attribute
+  @param {boolean} [eager] - load immediately (above the fold)
+{% enddoc %}
+{%- liquid
+  assign sizes = sizes | default: '(min-width: 1440px) 720px, 100vw'
+  assign loading = 'lazy'
+  if eager
+    assign loading = 'eager'
+  endif
+-%}
+{%- if image != blank -%}
+  {%- assign alt_text = alt | default: image.alt -%}
+  {{
+    image
+    | image_url: width: 2000
+    | image_tag:
+      widths: '400, 700, 1000, 1400, 2000',
+      sizes: sizes,
+      loading: loading,
+      class: class,
+      alt: alt_text
+  }}
+{%- elsif fallback != blank -%}
+  <img src="{{ fallback | asset_url }}" alt="{{ alt | escape }}" class="{{ class }}" width="1400" height="1750" loading="{{ loading }}">
+{%- else -%}
+  <div class="{{ class }} jhq-ph" role="img" aria-label="{{ alt | escape }}"></div>
+{%- endif -%}

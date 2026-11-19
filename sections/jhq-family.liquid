@@ -1,0 +1,57 @@
+<section class="{% if section.settings.soft_bg %}jhq-stone{% endif %}" aria-labelledby="family-{{ section.id }}">
+  <div class="jhq-wrap" style="padding-block: clamp(72px, 9vw, 120px);">
+    <div style="display: flex; flex-wrap: wrap; gap: 32px 80px; align-items: flex-end; justify-content: space-between; margin-bottom: 72px;">
+      <div style="flex: 1 1 480px; display: flex; flex-direction: column; gap: 28px; max-width: 720px;">
+        {%- if section.settings.kicker != blank -%}<span class="jhq-kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+        <h2 id="family-{{ section.id }}" class="jhq-h2 jhq-serif">{{ section.settings.heading }}</h2>
+      </div>
+      {%- if section.settings.text != blank or section.settings.link_label != blank -%}
+        <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 24px; max-width: 520px;">
+          {%- if section.settings.text != blank -%}<div class="jhq-body">{{ section.settings.text }}</div>{%- endif -%}
+          {%- if section.settings.link_label != blank -%}<a class="jhq-link" href="{{ section.settings.link | default: '/pages/our-story' }}">{{ section.settings.link_label }}</a>{%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+    <ul class="jhq-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px;">
+      {%- for block in section.blocks -%}
+        <li class="jhq-card" style="gap: 18px;" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 1200 | image_tag: class: 'jhq-person__img', alt: block.settings.name, loading: 'lazy', widths: '400, 800, 1200', sizes: '(min-width: 1000px) 33vw, 100vw' }}
+          {%- else -%}
+            <div class="jhq-person__ph" role="img" aria-label="Portrait of {{ block.settings.name | escape }} to come">{{ block.settings.name | slice: 0 }}</div>
+          {%- endif -%}
+          <div class="jhq-person__meta"><h3 class="jhq-h3" style="font-size: 26px;">{{ block.settings.name }}</h3><span class="jhq-kicker">{{ block.settings.role }}</span></div>
+          {%- if block.settings.bio != blank -%}<p class="jhq-small">{{ block.settings.bio }}</p>{%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Family profiles",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Small label", "default": "Our story" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A family business, bottle by bottle." },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "text", "id": "link_label", "label": "Link text" },
+    { "type": "url", "id": "link", "label": "Link" },
+    { "type": "checkbox", "id": "soft_bg", "label": "Soft grey background", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "person",
+      "name": "Person",
+      "limit": 6,
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Portrait" },
+        { "type": "text", "id": "name", "label": "Name", "default": "Name" },
+        { "type": "text", "id": "role", "label": "Role" },
+        { "type": "textarea", "id": "bio", "label": "Short bio" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Family profiles", "blocks": [{ "type": "person" }, { "type": "person" }, { "type": "person" }] }]
+}
+{% endschema %}

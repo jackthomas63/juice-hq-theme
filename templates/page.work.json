@@ -1,0 +1,117 @@
+{
+  "sections": {
+    "intro": {
+      "type": "jhq-page-intro",
+      "settings": {
+        "kicker": "Selected projects",
+        "heading": "Work.",
+        "text": "Beverages for flagship stores, launches, cafés and events, each designed with our in-house team."
+      }
+    },
+    "film": {
+      "type": "jhq-film",
+      "settings": {}
+    },
+    "projects": {
+      "type": "jhq-projects",
+      "settings": {},
+      "blocks": {
+        "project_1": {
+          "type": "project",
+          "settings": {
+            "placeholder": "jhq-diptyque.jpg",
+            "title": "Diptyque London flagship store",
+            "text": ""
+          }
+        },
+        "project_2": {
+          "type": "project",
+          "settings": {
+            "placeholder": "jhq-vogue-nike-2.jpg",
+            "title": "Vogue Café × Nike",
+            "text": ""
+          }
+        },
+        "project_3": {
+          "type": "project",
+          "settings": {
+            "placeholder": "jhq-la-roche-posay.jpg",
+            "title": "La Roche-Posay",
+            "text": ""
+          }
+        },
+        "project_4": {
+          "type": "project",
+          "settings": {
+            "placeholder": "jhq-lululemon-runna.jpg",
+            "title": "Lululemon × Runna",
+            "text": ""
+          }
+        },
+        "project_5": {
+          "type": "project",
+          "settings": {
+            "placeholder": "jhq-cerave.jpg",
+            "title": "CeraVe",
+            "text": ""
+          }
+        },
+        "project_6": {
+          "type": "project",
+          "settings": {
+            "placeholder": "jhq-bobbi-brown.jpg",
+            "title": "Bobbi Brown",
+            "text": ""
+          }
+        },
+        "project_7": {
+          "type": "project",
+          "settings": {
+            "placeholder": "jhq-corner-shop-2.jpg",
+            "title": "Corner Shop @ 180",
+            "text": ""
+          }
+        },
+        "project_8": {
+          "type": "project",
+          "settings": {
+            "placeholder": "jhq-vogue-nike-1.jpg",
+            "title": "Vogue Café",
+            "text": ""
+          }
+        },
+        "project_9": {
+          "type": "project",
+          "settings": {
+            "placeholder": "jhq-bottles-range.jpg",
+            "title": "Juice HQ hospitality range",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "project_1",
+        "project_2",
+        "project_3",
+        "project_4",
+        "project_5",
+        "project_6",
+        "project_7",
+        "project_8",
+        "project_9"
+      ]
+    },
+    "cta": {
+      "type": "jhq-cta",
+      "settings": {
+        "button_link": "/pages/enquire"
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "film",
+    "projects",
+    "cta"
+  ]
+}

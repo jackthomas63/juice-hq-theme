@@ -1,0 +1,52 @@
+<header class="jhq-header">
+  <div class="jhq-wrap jhq-header__inner">
+    <a href="{{ routes.root_url }}" class="jhq-header__logo" aria-label="{{ shop.name | escape }} home">
+      {%- if settings.logo != blank -%}
+        {{ settings.logo | image_url: height: 88 | image_tag: alt: shop.name, loading: 'eager' }}
+      {%- else -%}
+        <img src="{{ 'juice-hq-logo.png' | asset_url }}" alt="{{ shop.name | escape }}" width="2327" height="607">
+      {%- endif -%}
+    </a>
+    <nav class="jhq-header__nav" aria-label="Main">
+      {%- if section.settings.menu.links.size > 0 -%}
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a href="/pages/work"{% if request.path == '/pages/work' %} aria-current="page"{% endif %}>Work</a>
+        <a href="/pages/our-story"{% if request.path == '/pages/our-story' %} aria-current="page"{% endif %}>Our Story</a>
+        <a href="/pages/services"{% if request.path == '/pages/services' %} aria-current="page"{% endif %}>Services</a>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_link | default: '/pages/enquire' }}" class="jhq-header__cta">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "jhq-header-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu",
+      "info": "Add Work, Our Story and Services to this menu in Content › Menus. If it's empty, those three links are shown automatically."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Enquire link text",
+      "default": "Enquire"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Enquire link"
+    }
+  ]
+}
+{% endschema %}

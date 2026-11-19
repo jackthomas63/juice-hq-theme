@@ -1,0 +1,97 @@
+{%- liquid
+  assign types = 'Hospitality|Bespoke Branded Beverages|Bespoke Water|Become a stockist' | split: '|'
+  assign keys = 'hospitality|bespoke|water|stockist' | split: '|'
+  assign subs = 'Juice HQ for your hotel or venue|Your brand on the bottle|Still or sparkling, 330 ml cans|Stock Katie London' | split: '|'
+  assign orgs = 'Hotel or venue|Company or brand|Company or brand|' | split: '|'
+  assign dates = 'Opening or start date|Event or launch date|When do you need it?|' | split: '|'
+  assign notes = 'Where will the range be served?|Tell us about your launch, store or event|Still, sparkling or both, and roughly how many?|' | split: '|'
+-%}
+<section class="jhq-wrap" style="padding-top: clamp(64px, 7vw, 96px); padding-bottom: clamp(80px, 10vw, 140px);" aria-labelledby="enq-{{ section.id }}">
+  <div style="display: flex; flex-wrap: wrap; gap: 64px clamp(48px, 7vw, 96px); align-items: flex-start;">
+    <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 32px; max-width: 520px;">
+      {%- if section.settings.kicker != blank -%}<span class="jhq-kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h1 id="enq-{{ section.id }}" class="jhq-h1" style="font-size: clamp(56px, 8vw, 128px);">{{ section.settings.heading }}</h1>
+      {%- if section.settings.text != blank -%}<p style="font-size: 20px; line-height: 1.5; font-weight: 300;">{{ section.settings.text }}</p>{%- endif -%}
+      {%- if section.settings.email != blank or section.settings.phone != blank -%}
+        <div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--jhq-line); padding-top: 24px; font-size: 15px;">
+          <span class="jhq-kicker">Or contact us directly</span>
+          {%- if section.settings.email != blank -%}<a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>{%- endif -%}
+          {%- if section.settings.phone != blank -%}<a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a>{%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div style="flex: 1.4 1 520px; min-width: 0;">
+      {%- form 'contact', id: 'JhqEnquiry', class: 'jhq-form' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="jhq-notice" role="status" tabindex="-1">
+            <span class="jhq-kicker">Enquiry received</span>
+            <h2 class="jhq-serif" style="font-size: clamp(40px, 5vw, 72px); line-height: 1;">{{ section.settings.success_heading }}</h2>
+            <p class="jhq-body">{{ section.settings.success_text }}</p>
+          </div>
+        {%- else -%}
+          <jhq-enquiry style="display: contents;">
+            {%- if form.errors -%}<div class="jhq-errors" role="alert">{{ form.errors | default_errors }}</div>{%- endif -%}
+            <fieldset>
+              <legend class="jhq-kicker" style="margin-bottom: 16px; padding: 0;">What are you enquiring about?</legend>
+              <div class="jhq-types">
+                {%- for t in types -%}
+                  {%- assign i = forloop.index0 -%}
+                  <div class="jhq-type">
+                    <input type="radio" id="type-{{ keys[i] }}" name="contact[Enquiry type]" value="{{ t }}" data-key="{{ keys[i] }}" data-org="{{ orgs[i] }}" data-date="{{ dates[i] }}" data-notes="{{ notes[i] }}"{% if forloop.first %} checked{% endif %}>
+                    <label for="type-{{ keys[i] }}"><span style="font-size: 17px; color: var(--jhq-ink);">{{ t }}</span><span style="font-size: 13px; color: var(--jhq-muted); line-height: 1.4;">{{ subs[i] }}</span></label>
+                  </div>
+                {%- endfor -%}
+              </div>
+            </fieldset>
+
+            <fieldset data-group="project">
+              <legend class="jhq-skip">Your details</legend>
+              <div class="jhq-fields">
+                <label class="jhq-field">Name<input type="text" name="contact[name]" autocomplete="name" required></label>
+                <label class="jhq-field"><span data-label-org>Hotel or venue</span><input type="text" name="contact[Company]" autocomplete="organization"></label>
+                <label class="jhq-field">Email<input type="email" name="contact[email]" autocomplete="email" required></label>
+                <label class="jhq-field">Phone<input type="tel" name="contact[phone]" autocomplete="tel"></label>
+                <label class="jhq-field jhq-field--full"><span data-label-date>Opening or start date</span><input type="text" name="contact[Date]"></label>
+                <label class="jhq-field jhq-field--full"><span data-label-notes>Where will the range be served?</span><textarea name="contact[body]" rows="5"></textarea></label>
+              </div>
+            </fieldset>
+
+            <fieldset data-group="stockist" disabled>
+              <legend class="jhq-skip">Stockist details</legend>
+              <div class="jhq-fields">
+                <img src="{{ 'katie-london-logo.png' | asset_url }}" alt="Katie London" width="1600" height="1060" style="width: 160px; height: auto; grid-column: 1 / -1;">
+                <label class="jhq-field">Business name<input type="text" name="contact[Business name]" autocomplete="organization" required></label>
+                <label class="jhq-field">Contact email<input type="email" name="contact[email]" autocomplete="email" required></label>
+                <label class="jhq-field jhq-field--full">Location<input type="text" name="contact[Location]" autocomplete="address-level2" required></label>
+                <label class="jhq-field jhq-field--full">Where would you stock the range?<textarea name="contact[body]" rows="4"></textarea></label>
+              </div>
+            </fieldset>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;">
+              <span style="font-size: 13px; color: var(--jhq-muted);">{{ section.settings.note }}</span>
+              <button type="submit" class="jhq-btn" data-send>Send enquiry</button>
+            </div>
+          </jhq-enquiry>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Enquiry form",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Small label", "default": "Enquire" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Let's talk." },
+    { "type": "textarea", "id": "text", "label": "Intro", "default": "Tell us what you have in mind. We'll come back to you to talk through beverages, design, quantities and timings, then build the package with you." },
+    { "type": "text", "id": "email", "label": "Email address" },
+    { "type": "text", "id": "phone", "label": "Phone number" },
+    { "type": "text", "id": "note", "label": "Note beside the button", "default": "We reply to every enquiry personally." },
+    { "type": "text", "id": "success_heading", "label": "Thank-you heading", "default": "Thank you. We'll be in touch." },
+    { "type": "textarea", "id": "success_text", "label": "Thank-you text", "default": "A member of the family will come back to you shortly to talk it through." }
+  ],
+  "presets": [{ "name": "Enquiry form" }]
+}
+{% endschema %}

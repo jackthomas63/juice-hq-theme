@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "form": {
+      "type": "jhq-enquire",
+      "settings": {}
+    }
+  },
+  "order": [
+    "form"
+  ]
+}

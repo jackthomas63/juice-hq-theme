@@ -1,0 +1,19 @@
+<section class="{% if section.settings.dark %}jhq-dark{% else %}jhq-stone{% endif %}">
+  <div class="jhq-wrap" style="padding-block: clamp(72px, 8vw, 120px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px;">
+    <h2 class="jhq-h2" style="max-width: 760px; font-size: clamp(36px, 4.6vw, 68px);">{{ section.settings.heading }}</h2>
+    {%- if section.settings.button_label != blank -%}<a class="jhq-btn" href="{{ section.settings.button_link | default: '/pages/enquire' }}">{{ section.settings.button_label }}</a>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Enquiry banner",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Have a launch, venue or event in mind?" },
+    { "type": "text", "id": "button_label", "label": "Button text", "default": "Start an enquiry" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "checkbox", "id": "dark", "label": "Black background", "default": false }
+  ],
+  "presets": [{ "name": "Enquiry banner" }]
+}
+{% endschema %}

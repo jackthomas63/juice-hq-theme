@@ -1,0 +1,68 @@
+{
+  "sections": {
+    "intro": {
+      "type": "jhq-page-intro",
+      "settings": {
+        "kicker": "What we offer",
+        "heading": "Services.",
+        "text": "From a private edition of your own to the glass or can it's served in, every service is shaped around your venue or brand."
+      }
+    },
+    "private": {
+      "type": "jhq-split",
+      "settings": {
+        "placeholder": "jhq-bobbi-brown.jpg",
+        "number": "01",
+        "heading": "Private Edition",
+        "text": "<p>Add the existing Private Edition copy here.</p>",
+        "link_1_label": "Bespoke Branded Beverages →",
+        "link_1": "/pages/bespoke-branded-beverages",
+        "link_2_label": "Hospitality →",
+        "link_2": "/pages/hospitality"
+      }
+    },
+    "glass": {
+      "type": "jhq-split",
+      "settings": {
+        "placeholder": "jhq-bottles-range.jpg",
+        "image_right": true,
+        "number": "02",
+        "heading": "Glass packaging",
+        "text": "<p>Add the existing glass packaging copy here.</p>",
+        "link_1_label": "Hospitality →",
+        "link_1": "/pages/hospitality",
+        "link_2_label": "Bespoke Branded Beverages →",
+        "link_2": "/pages/bespoke-branded-beverages"
+      }
+    },
+    "pet": {
+      "type": "jhq-split",
+      "settings": {
+        "placeholder": "jhq-lululemon-runna.jpg",
+        "number": "03",
+        "heading": "PET cans",
+        "text": "<p>Clear, lightweight PET cans that show off the colour of every beverage. Made for events, activations and anywhere glass isn't practical, as with our cans for Lululemon × Runna and CeraVe.</p>",
+        "link_1_label": "Bespoke Branded Beverages →",
+        "link_1": "/pages/bespoke-branded-beverages",
+        "link_2_label": "Bespoke Water →",
+        "link_2": "/pages/bespoke-water"
+      }
+    },
+    "design": {
+      "type": "jhq-process",
+      "settings": {
+        "kicker": "04 · In-house design",
+        "heading": "Designed by our\nown team.",
+        "text": "Our in-house design team creates the labels and packaging for every project, working from your brand guidelines or starting fresh.",
+        "button_link": "/pages/enquire"
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "private",
+    "glass",
+    "pet",
+    "design"
+  ]
+}

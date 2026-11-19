@@ -1,0 +1,54 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Juice HQ",
+    "theme_version": "1.0.0",
+    "theme_author": "Juice HQ",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo (black on transparent)",
+        "info": "Used in the header, and inverted to white for the large footer logo. Until you upload one, the bundled Juice HQ logo is used."
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "url",
+        "id": "instagram_url",
+        "label": "Instagram link"
+      }
+    ]
+  },
+  {
+    "name": "Colours",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "foreground_color",
+        "label": "Text",
+        "default": "#0A0A0A"
+      },
+      {
+        "type": "color",
+        "id": "stone_color",
+        "label": "Soft background (family, quote panels)",
+        "default": "#F4F4F2"
+      }
+    ]
+  }
+]

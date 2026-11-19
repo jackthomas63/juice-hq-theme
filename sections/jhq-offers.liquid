@@ -1,0 +1,41 @@
+<section class="jhq-wrap jhq-pad-s" aria-labelledby="offers-{{ section.id }}">
+  <div class="jhq-head">
+    <h2 id="offers-{{ section.id }}" class="jhq-h2">{{ section.settings.heading }}</h2>
+    {%- if section.settings.kicker != blank -%}<span class="jhq-kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+  </div>
+  <div class="jhq-grid">
+    {%- for block in section.blocks -%}
+      <article class="jhq-card" {{ block.shopify_attributes }}>
+        {%- render 'jhq-img', image: block.settings.image, fallback: block.settings.placeholder, alt: block.settings.title, class: 'jhq-card__img', sizes: '(min-width: 1000px) 33vw, 100vw' -%}
+        <div class="jhq-card__title"><span class="jhq-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><h3 class="jhq-h3">{{ block.settings.title }}</h3></div>
+        {%- if block.settings.text != blank -%}<p class="jhq-small" style="max-width: 400px;">{{ block.settings.text }}</p>{%- endif -%}
+        {%- if block.settings.link_label != blank -%}<a class="jhq-link" href="{{ block.settings.link | default: '#' }}">{{ block.settings.link_label }}</a>{%- endif -%}
+      </article>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Offer cards",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What we make" },
+    { "type": "text", "id": "kicker", "label": "Small label", "default": "Three ways to work with us" }
+  ],
+  "blocks": [
+    {
+      "type": "offer",
+      "name": "Offer",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "placeholder", "label": "Placeholder image (theme file)", "info": "Shown until you choose an image." },
+        { "type": "text", "id": "title", "label": "Title", "default": "Hospitality" },
+        { "type": "textarea", "id": "text", "label": "Text" },
+        { "type": "text", "id": "link_label", "label": "Link text" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Offer cards", "blocks": [{ "type": "offer" }, { "type": "offer" }, { "type": "offer" }] }]
+}
+{% endschema %}

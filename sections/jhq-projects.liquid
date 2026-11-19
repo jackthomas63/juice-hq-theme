@@ -1,0 +1,36 @@
+<section class="jhq-wrap jhq-pad" aria-label="{{ section.settings.heading | default: 'Projects' | escape }}">
+  {%- if section.settings.heading != blank -%}
+    <div class="jhq-head"><h2 class="jhq-h2">{{ section.settings.heading }}</h2></div>
+  {%- endif -%}
+  <ul class="jhq-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px 32px;">
+    {%- for block in section.blocks -%}
+      <li class="jhq-card" style="gap: 16px;" {{ block.shopify_attributes }}>
+        {%- render 'jhq-img', image: block.settings.image, fallback: block.settings.placeholder, alt: block.settings.title, class: 'jhq-card__img', sizes: '(min-width: 1000px) 33vw, 100vw' -%}
+        <div class="jhq-card__title jhq-card__rule"><span class="jhq-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><h3 class="jhq-h3" style="font-size: 22px;">{{ block.settings.title }}</h3></div>
+        {%- if block.settings.text != blank -%}<p class="jhq-small">{{ block.settings.text }}</p>{%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "Project grid",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading (optional)" }
+  ],
+  "blocks": [
+    {
+      "type": "project",
+      "name": "Project",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "placeholder", "label": "Placeholder image (theme file)", "info": "Shown until you choose an image." },
+        { "type": "text", "id": "title", "label": "Project name", "default": "Project" },
+        { "type": "textarea", "id": "text", "label": "Short description" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Project grid", "blocks": [{ "type": "project" }, { "type": "project" }, { "type": "project" }] }]
+}
+{% endschema %}

@@ -1,0 +1,420 @@
+{
+  "sections": {
+    "hero": {
+      "type": "jhq-hero",
+      "settings": {}
+    },
+    "offers": {
+      "type": "jhq-offers",
+      "settings": {},
+      "blocks": {
+        "offer_1": {
+          "type": "offer",
+          "settings": {
+            "placeholder": "jhq-flu-shot.jpg",
+            "title": "Hospitality",
+            "text": "Raw juice in beautifully packaged glass, exclusive to hospitality. Made for breakfast, in-room dining, minibars, suites and spa.",
+            "link_label": "Juice HQ for Hospitality →",
+            "link": "/pages/hospitality"
+          }
+        },
+        "offer_2": {
+          "type": "offer",
+          "settings": {
+            "placeholder": "jhq-vogue-nike-1.jpg",
+            "title": "Bespoke Branded Beverages",
+            "text": "Your brand on the bottle. Beverages made for launches, flagship stores and brand activations, with labels designed by our in-house team.",
+            "link_label": "Explore Bespoke Branded Beverages →",
+            "link": "/pages/bespoke-branded-beverages"
+          }
+        },
+        "offer_3": {
+          "type": "offer",
+          "settings": {
+            "placeholder": "jhq-cerave.jpg",
+            "title": "Bespoke Water",
+            "text": "Still and sparkling water in 330 ml cans, branded to you. Low minimum orders, designed by our in-house team.",
+            "link_label": "Explore Bespoke Water →",
+            "link": "/pages/bespoke-water"
+          }
+        }
+      },
+      "block_order": [
+        "offer_1",
+        "offer_2",
+        "offer_3"
+      ]
+    },
+    "work": {
+      "type": "jhq-carousel",
+      "settings": {
+        "link": "/pages/work"
+      },
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "jhq-diptyque.jpg",
+            "title": "Diptyque London flagship store"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "jhq-vogue-nike-2.jpg",
+            "title": "Vogue Café × Nike"
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "jhq-la-roche-posay.jpg",
+            "title": "La Roche-Posay"
+          }
+        },
+        "slide_4": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "jhq-lululemon-runna.jpg",
+            "title": "Lululemon × Runna"
+          }
+        },
+        "slide_5": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "jhq-cerave.jpg",
+            "title": "CeraVe"
+          }
+        },
+        "slide_6": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "jhq-bobbi-brown.jpg",
+            "title": "Bobbi Brown"
+          }
+        },
+        "slide_7": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "jhq-corner-shop-2.jpg",
+            "title": "Corner Shop @ 180"
+          }
+        },
+        "slide_8": {
+          "type": "slide",
+          "settings": {
+            "placeholder": "jhq-corner-shop-1.jpg",
+            "title": "Corner Shop @ 180"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2",
+        "slide_3",
+        "slide_4",
+        "slide_5",
+        "slide_6",
+        "slide_7",
+        "slide_8"
+      ]
+    },
+    "logos": {
+      "type": "jhq-logos",
+      "settings": {},
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-peninsula.png",
+            "name": "The Peninsula London"
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-park-hyatt.png",
+            "name": "Park Hyatt"
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-cetaphil.png",
+            "name": "Cetaphil"
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-adidas.png",
+            "name": "Adidas"
+          }
+        },
+        "logo_5": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-dior.png",
+            "name": "Dior"
+          }
+        },
+        "logo_6": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-drunk-elephant.png",
+            "name": "Drunk Elephant"
+          }
+        },
+        "logo_7": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-london-stadium.png",
+            "name": "London Stadium"
+          }
+        },
+        "logo_8": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-one-aldwych.png",
+            "name": "One Aldwych"
+          }
+        },
+        "logo_9": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-the-chancery.png",
+            "name": "The Chancery Rosewood"
+          }
+        },
+        "logo_10": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-irene-forte.png",
+            "name": "Irene Forte"
+          }
+        },
+        "logo_11": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-bo-tee.png",
+            "name": "Bo+Tee"
+          }
+        },
+        "logo_12": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-cartier.png",
+            "name": "Cartier"
+          }
+        },
+        "logo_13": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-loreal.png",
+            "name": "L'Oréal"
+          }
+        },
+        "logo_14": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-wembley.png",
+            "name": "Wembley"
+          }
+        },
+        "logo_15": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-lululemon.png",
+            "name": "Lululemon"
+          }
+        },
+        "logo_16": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-vogue.png",
+            "name": "Vogue"
+          }
+        },
+        "logo_17": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-bobbi-brown.png",
+            "name": "Bobbi Brown"
+          }
+        },
+        "logo_18": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-corner-shop.png",
+            "name": "Corner Shop"
+          }
+        },
+        "logo_19": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-salesforce.png",
+            "name": "Salesforce"
+          }
+        },
+        "logo_20": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-chanel.png",
+            "name": "Chanel"
+          }
+        },
+        "logo_21": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-meta.png",
+            "name": "Meta"
+          }
+        },
+        "logo_22": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-ganni.png",
+            "name": "Ganni"
+          }
+        },
+        "logo_23": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-111skin.png",
+            "name": "111SKIN"
+          }
+        },
+        "logo_24": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-netflix.png",
+            "name": "Netflix"
+          }
+        },
+        "logo_25": {
+          "type": "logo",
+          "settings": {
+            "placeholder": "logo-st-clement.png",
+            "name": "St. Clement London"
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4",
+        "logo_5",
+        "logo_6",
+        "logo_7",
+        "logo_8",
+        "logo_9",
+        "logo_10",
+        "logo_11",
+        "logo_12",
+        "logo_13",
+        "logo_14",
+        "logo_15",
+        "logo_16",
+        "logo_17",
+        "logo_18",
+        "logo_19",
+        "logo_20",
+        "logo_21",
+        "logo_22",
+        "logo_23",
+        "logo_24",
+        "logo_25"
+      ]
+    },
+    "family": {
+      "type": "jhq-family",
+      "settings": {
+        "text": "<p>Juice HQ is run by Katie, Scott and their son Jack.</p>",
+        "link_label": "Read our story →",
+        "link": "/pages/our-story"
+      },
+      "blocks": {
+        "person_1": {
+          "type": "person",
+          "settings": {
+            "name": "Katie",
+            "role": "",
+            "bio": ""
+          }
+        },
+        "person_2": {
+          "type": "person",
+          "settings": {
+            "name": "Scott",
+            "role": "",
+            "bio": ""
+          }
+        },
+        "person_3": {
+          "type": "person",
+          "settings": {
+            "name": "Jack",
+            "role": "Partner",
+            "bio": ""
+          }
+        }
+      },
+      "block_order": [
+        "person_1",
+        "person_2",
+        "person_3"
+      ]
+    },
+    "process": {
+      "type": "jhq-process",
+      "settings": {
+        "text": "Every project starts with a conversation. Our in-house design team then shapes the beverages, bottles and labels around your venue, launch or brand.",
+        "button_link": "/pages/enquire"
+      },
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Enquire",
+            "text": "Tell us about your venue, launch or event, and what you have in mind."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Design",
+            "text": "Our in-house design team creates your labels and packaging, and we choose the beverages and glass together."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Produce",
+            "text": "We press, bottle and prepare your order, ready for your guests."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ]
+    },
+    "katie": {
+      "type": "jhq-katie",
+      "settings": {
+        "button_link": "/pages/enquire?type=stockist"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "offers",
+    "work",
+    "logos",
+    "family",
+    "process",
+    "katie"
+  ]
+}

@@ -1,0 +1,34 @@
+<section class="jhq-wrap jhq-pad" aria-labelledby="katie-{{ section.id }}">
+  <div class="jhq-split">
+    <div class="jhq-split__text">
+      {%- if section.settings.kicker != blank -%}<span class="jhq-kicker">{{ section.settings.kicker }}</span>{%- endif -%}
+      <h2 id="katie-{{ section.id }}">
+        {%- if section.settings.logo != blank -%}
+          {{ section.settings.logo | image_url: width: 600 | image_tag: alt: 'Katie London', style: 'width: 280px; height: auto; display: block;' }}
+        {%- else -%}
+          <img src="{{ 'katie-london-logo.png' | asset_url }}" alt="Katie London" width="1600" height="1060" style="width: 280px; height: auto; display: block;">
+        {%- endif -%}
+      </h2>
+      {%- if section.settings.text != blank -%}<p style="font-size: 20px; line-height: 1.5; font-weight: 300;">{{ section.settings.text }}</p>{%- endif -%}
+      {%- if section.settings.button_label != blank -%}<a class="jhq-btn" style="align-self: flex-start;" href="{{ section.settings.button_link | default: '/pages/enquire?type=stockist' }}">{{ section.settings.button_label }}</a>{%- endif -%}
+    </div>
+    <div class="jhq-split__media">
+      {%- render 'jhq-img', image: section.settings.image, fallback: 'jhq-katie-london.jpg', alt: 'Katie London', class: 'jhq-katie__img' -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Katie London",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Small label", "default": "Our retail brand" },
+    { "type": "image_picker", "id": "logo", "label": "Katie London logo" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Raw cold-pressed juice and functional beverages, made for the shelf. If you'd like to stock Katie London, tell us about your shop." },
+    { "type": "text", "id": "button_label", "label": "Button text", "default": "Become a stockist" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "image_picker", "id": "image", "label": "Image" }
+  ],
+  "presets": [{ "name": "Katie London" }]
+}
+{% endschema %}

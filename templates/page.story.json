@@ -1,0 +1,84 @@
+{
+  "sections": {
+    "intro": {
+      "type": "jhq-page-intro",
+      "settings": {
+        "kicker": "Our story",
+        "heading": "A family business, bottle by bottle.",
+        "serif": true
+      }
+    },
+    "story": {
+      "type": "jhq-split",
+      "settings": {
+        "placeholder": "jhq-katie-truck.jpg",
+        "rule": false,
+        "heading": "Juice HQ is run by Katie, Scott and their son Jack.",
+        "text": "<p>Add the founder story here: how Juice HQ started, the move into luxury hospitality, and what still matters most.</p>"
+      }
+    },
+    "quote": {
+      "type": "jhq-quote",
+      "settings": {}
+    },
+    "family": {
+      "type": "jhq-family",
+      "settings": {
+        "kicker": "Katie · Scott · Jack",
+        "heading": "The family"
+      },
+      "blocks": {
+        "person_1": {
+          "type": "person",
+          "settings": {
+            "name": "Katie",
+            "role": "",
+            "bio": ""
+          }
+        },
+        "person_2": {
+          "type": "person",
+          "settings": {
+            "name": "Scott",
+            "role": "",
+            "bio": ""
+          }
+        },
+        "person_3": {
+          "type": "person",
+          "settings": {
+            "name": "Jack",
+            "role": "Partner",
+            "bio": ""
+          }
+        }
+      },
+      "block_order": [
+        "person_1",
+        "person_2",
+        "person_3"
+      ]
+    },
+    "design": {
+      "type": "jhq-split",
+      "settings": {
+        "placeholder": "jhq-diptyque.jpg",
+        "image_right": true,
+        "rule": false,
+        "top_space": true,
+        "kicker": "Designed in-house",
+        "heading": "Every label, made by our own team.",
+        "text": "<p>Our in-house design team works on every project, from the label artwork to the packaging, so your beverages look as considered as they taste.</p>",
+        "link_1_label": "See our services →",
+        "link_1": "/pages/services"
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "story",
+    "quote",
+    "family",
+    "design"
+  ]
+}
