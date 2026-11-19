@@ -11,7 +11,7 @@
       {%- for block in section.blocks -%}
         <div class="jhq-footer__col" {{ block.shopify_attributes }}>
           <span class="jhq-kicker" style="color: #A6A6A6; margin-bottom: 8px;">{{ block.settings.title }}</span>
-          {%- if block.settings.menu.links.size > 0 -%}
+          {%- if block.settings.links == 'menu' and block.settings.menu.links.size > 0 -%}
             {%- for link in block.settings.menu.links -%}
               <a href="{{ link.url }}">{{ link.title }}</a>
             {%- endfor -%}
@@ -67,7 +67,7 @@
       "settings": [
         { "type": "text", "id": "title", "label": "Column title", "default": "Juice HQ" },
         { "type": "link_list", "id": "menu", "label": "Menu", "info": "Optional. Leave empty to use the built-in links below." },
-        { "type": "select", "id": "links", "label": "Built-in links", "options": [{ "value": "offer", "label": "Offer pages" }, { "value": "company", "label": "Juice HQ pages" }, { "value": "none", "label": "None" }], "default": "company" },
+        { "type": "select", "id": "links", "label": "Built-in links", "options": [{ "value": "offer", "label": "Offer pages" }, { "value": "company", "label": "Juice HQ pages" }, { "value": "menu", "label": "Use the menu above" }, { "value": "none", "label": "None" }], "default": "company" },
         { "type": "checkbox", "id": "show_instagram", "label": "Add Instagram link", "default": false }
       ]
     }
