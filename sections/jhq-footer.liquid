@@ -13,7 +13,7 @@
           <span class="jhq-kicker" style="color: #A6A6A6; margin-bottom: 8px;">{{ block.settings.title }}</span>
           {%- liquid
             assign mode = block.settings.links
-            if mode == blank or mode == 'auto'
+            if mode == blank or mode == 'offer' or mode == 'company'
               if forloop.first
                 assign mode = 'offer'
               else
@@ -77,7 +77,7 @@
       "settings": [
         { "type": "text", "id": "title", "label": "Column title", "default": "Juice HQ" },
         { "type": "link_list", "id": "menu", "label": "Menu", "info": "Optional. Leave empty to use the built-in links below." },
-        { "type": "select", "id": "links", "label": "Links", "options": [{ "value": "auto", "label": "Automatic" }, { "value": "offer", "label": "Offer pages" }, { "value": "company", "label": "Juice HQ pages" }, { "value": "menu", "label": "Use the menu above" }, { "value": "none", "label": "None" }], "default": "auto", "info": "Automatic: the first column shows offer pages, the others show Juice HQ pages." },
+        { "type": "select", "id": "links", "label": "Links", "options": [{ "value": "offer", "label": "Offer pages" }, { "value": "company", "label": "Juice HQ pages" }, { "value": "menu", "label": "Use the menu above" }, { "value": "none", "label": "None" }], "info": "Left unset, the first column shows offer pages and the others show Juice HQ pages." },
         { "type": "checkbox", "id": "show_instagram", "label": "Add Instagram link", "default": false }
       ]
     }
