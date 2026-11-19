@@ -1,12 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "jhq-hero",
-      "settings": {}
+      "settings": {
+        "kicker": "",
+        "heading": "The premier\nstandard.",
+        "text": "We make raw, cold-pressed juice in glass bottles for luxury hotels & hospitality, bespoke branded beverages that carry your brand at launches, stores and events and bespoke still & sparkling water for your venue or brand."
+      }
     },
     "offers": {
       "type": "jhq-offers",
-      "settings": {},
       "blocks": {
         "offer_1": {
           "type": "offer",
@@ -43,13 +55,14 @@
         "offer_1",
         "offer_2",
         "offer_3"
-      ]
+      ],
+      "settings": {
+        "heading": "What we do",
+        "kicker": "Three ways to work with us"
+      }
     },
     "work": {
       "type": "jhq-carousel",
-      "settings": {
-        "link": "/pages/work"
-      },
       "blocks": {
         "slide_1": {
           "type": "slide",
@@ -117,11 +130,18 @@
         "slide_6",
         "slide_7",
         "slide_8"
-      ]
+      ],
+      "settings": {
+        "heading": "Selected work",
+        "link_label": "View all work →",
+        "link": "/pages/work",
+        "per_view": 2.5,
+        "autoplay": true,
+        "interval": 4
+      }
     },
     "logos": {
       "type": "jhq-logos",
-      "settings": {},
       "blocks": {
         "logo_1": {
           "type": "logo",
@@ -325,15 +345,14 @@
         "logo_23",
         "logo_24",
         "logo_25"
-      ]
+      ],
+      "settings": {
+        "heading": "Trusted by",
+        "kicker": "Hotels, houses and brands"
+      }
     },
     "family": {
       "type": "jhq-family",
-      "settings": {
-        "text": "<p>Juice HQ is run by Katie, Scott and their son Jack.</p>",
-        "link_label": "Read our story →",
-        "link": "/pages/our-story"
-      },
       "blocks": {
         "person_1": {
           "type": "person",
@@ -364,14 +383,18 @@
         "person_1",
         "person_2",
         "person_3"
-      ]
+      ],
+      "settings": {
+        "kicker": "Our story",
+        "heading": "A family business, bottle by bottle.",
+        "text": "<p>Juice HQ is run by Katie, Scott and their son Jack.</p>",
+        "link_label": "Read our story →",
+        "link": "/pages/our-story",
+        "soft_bg": true
+      }
     },
     "process": {
       "type": "jhq-process",
-      "settings": {
-        "text": "Every project starts with a conversation. Our in-house design team then shapes the beverages, bottles and labels around your venue, launch or brand.",
-        "button_link": "/pages/enquire"
-      },
       "blocks": {
         "step_1": {
           "type": "step",
@@ -399,11 +422,21 @@
         "step_1",
         "step_2",
         "step_3"
-      ]
+      ],
+      "settings": {
+        "kicker": "How we work",
+        "heading": "Your package, built with you.",
+        "text": "Every project starts with a conversation. Our in-house design team then shapes the beverages, bottles and labels around your venue, launch or brand.",
+        "button_label": "Start an enquiry",
+        "button_link": "/pages/enquire"
+      }
     },
     "katie": {
       "type": "jhq-katie",
       "settings": {
+        "kicker": "Our retail brand",
+        "text": "Raw cold-pressed juice and functional beverages, made for the shelf. If you'd like to stock Katie London, tell us about your shop.",
+        "button_label": "Become a stockist",
         "button_link": "/pages/enquire?type=stockist"
       }
     }

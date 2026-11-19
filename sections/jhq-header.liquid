@@ -8,7 +8,7 @@
       {%- endif -%}
     </a>
     <nav class="jhq-header__nav" aria-label="Main">
-      {%- if section.settings.use_menu and section.settings.menu.links.size > 0 -%}
+      {%- if section.settings.menu.links.size > 0 -%}
         {%- for link in section.settings.menu.links -%}
           <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title }}</a>
         {%- endfor -%}
@@ -29,13 +29,6 @@
   "name": "Header",
   "class": "jhq-header-section",
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "use_menu",
-      "label": "Use a Shopify menu",
-      "default": false,
-      "info": "Off: shows Work, Our Story and Services."
-    },
     {
       "type": "link_list",
       "id": "menu",
