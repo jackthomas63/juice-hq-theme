@@ -60,8 +60,8 @@ body.jhq {
 .jhq-header__nav .jhq-header__cta { color: var(--jhq-ink); border-bottom: 1px solid var(--jhq-ink); padding-bottom: 2px; }
 
 /* Hero */
-.jhq-hero__top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 56px; }
-.jhq-hero__body { margin-top: 64px; }
+.jhq .jhq-hero__top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 56px; }
+.jhq .jhq-hero__body { margin-top: 64px; }
 
 /* Cards grid (offers, projects) */
 .jhq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px 32px; list-style: none; margin: 0; padding: 0; }
