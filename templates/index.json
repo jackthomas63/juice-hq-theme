@@ -26,8 +26,7 @@
             "placeholder": "jhq-flu-shot.jpg",
             "title": "Hospitality",
             "text": "Raw juice in beautifully packaged glass, exclusive to hospitality. Made for breakfast, in-room dining, minibars, suites and spa.",
-            "link_label": "Juice HQ for Hospitality →",
-            "link": "/pages/hospitality"
+            "link_label": ""
           }
         },
         "offer_2": {
@@ -36,8 +35,7 @@
             "placeholder": "jhq-vogue-nike-1.jpg",
             "title": "Bespoke Branded Beverages",
             "text": "Your brand on the bottle. Beverages made for launches, flagship stores and brand activations, with labels designed by our in-house team.",
-            "link_label": "Explore Bespoke Branded Beverages →",
-            "link": "/pages/bespoke-branded-beverages"
+            "link_label": ""
           }
         },
         "offer_3": {
@@ -46,8 +44,7 @@
             "placeholder": "jhq-cerave.jpg",
             "title": "Bespoke Water",
             "text": "Still and sparkling water in 330 ml cans, branded to you. Low minimum orders, designed by our in-house team.",
-            "link_label": "Explore Bespoke Water →",
-            "link": "/pages/bespoke-water"
+            "link_label": ""
           }
         }
       },

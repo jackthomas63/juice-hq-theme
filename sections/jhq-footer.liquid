@@ -9,9 +9,7 @@
         {%- endif -%}
       </div>
       {%- for block in section.blocks -%}
-        <div class="jhq-footer__col" {{ block.shopify_attributes }}>
-          <span class="jhq-kicker" style="color: #A6A6A6; margin-bottom: 8px;">{{ block.settings.title }}</span>
-          {%- liquid
+        {%- liquid
             assign mode = block.settings.links
             if mode == blank or mode == 'offer' or mode == 'company'
               if forloop.first
@@ -21,6 +19,10 @@
               endif
             endif
           -%}
+        {%- if mode == 'offer' -%}{%- continue -%}{%- endif -%}
+        <div class="jhq-footer__col" {{ block.shopify_attributes }}>
+          <span class="jhq-kicker" style="color: #A6A6A6; margin-bottom: 8px;">{{ block.settings.title }}</span>
+          
           {%- if mode == 'menu' and block.settings.menu.links.size > 0 -%}
             {%- for link in block.settings.menu.links -%}
               <a href="{{ link.url }}">{{ link.title }}</a>

@@ -15,10 +15,8 @@
         "number": "01",
         "heading": "Private Edition",
         "text": "<p>Add the existing Private Edition copy here.</p>",
-        "link_1_label": "Bespoke Branded Beverages →",
-        "link_1": "/pages/bespoke-branded-beverages",
-        "link_2_label": "Hospitality →",
-        "link_2": "/pages/hospitality"
+        "link_1_label": "",
+        "link_2_label": ""
       }
     },
     "glass": {
@@ -29,10 +27,8 @@
         "number": "02",
         "heading": "Glass packaging",
         "text": "<p>Add the existing glass packaging copy here.</p>",
-        "link_1_label": "Hospitality →",
-        "link_1": "/pages/hospitality",
-        "link_2_label": "Bespoke Branded Beverages →",
-        "link_2": "/pages/bespoke-branded-beverages"
+        "link_1_label": "",
+        "link_2_label": ""
       }
     },
     "pet": {
@@ -42,10 +38,8 @@
         "number": "03",
         "heading": "PET cans",
         "text": "<p>Clear, lightweight PET cans that show off the colour of every beverage. Made for events, activations and anywhere glass isn't practical, as with our cans for Lululemon × Runna and CeraVe.</p>",
-        "link_1_label": "Bespoke Branded Beverages →",
-        "link_1": "/pages/bespoke-branded-beverages",
-        "link_2_label": "Bespoke Water →",
-        "link_2": "/pages/bespoke-water"
+        "link_1_label": "",
+        "link_2_label": ""
       }
     },
     "design": {
