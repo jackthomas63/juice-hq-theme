@@ -479,7 +479,7 @@
         "hotel_6": {
           "type": "logo",
           "settings": {
-            "placeholder": "",
+            "placeholder": "logo-waldorf-astoria.png",
             "name": "Waldorf Astoria Admiralty Arch"
           }
         }
